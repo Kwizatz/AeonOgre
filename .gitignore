@@ -1,0 +1,9 @@
+# Ogre3d package and directory
+ogre_src*
+
+# freetype package and directory
+freetype*
+
+# CMake build directories
+x32
+x64
