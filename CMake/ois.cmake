@@ -43,15 +43,11 @@ set(OIS_PLATFORM_SOURCES
 )
 endif(WIN32)
 
-set(ZZip_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/ois-v1-3/includes")
-set(ZZip_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/ois-v1-3/includes")
-set(ZZip_HOME "${CMAKE_SOURCE_DIR}/ois-v1-3")
-set(ZZip_PREFIX_PATH "${CMAKE_SOURCE_DIR}/ois-v1-3")
-set(ZZip_LIBRARIES ois)
-set(ZZip_LIBRARY ois)
-set(ZZip_LIBRARY_FWK ois)
-set(ZZip_LIBRARY_REL ois)
-set(ZZip_LIBRARY_DBG ois)
+set(OIS_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/ois-v1-3/includes")
+set(OIS_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/ois-v1-3/includes")
+set(OIS_LIBRARIES ois dxguid dinput8 xinput)
+set(OIS_LIBRARY ois)
+
 include_directories("${CMAKE_SOURCE_DIR}/ois-v1-3/includes")
 add_library(ois ${OIS_SOURCES} ${OIS_PLATFORM_SOURCES})
 
