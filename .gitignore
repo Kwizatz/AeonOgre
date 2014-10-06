@@ -1,8 +1,23 @@
+# AStyle package and directory
+AStyle/*
+AStyle_*
+AStyle.exe
+
 # Ogre3d package and directory
 ogre_src*
 
 # freetype package and directory
 freetype*
+
+# zlib package and directory
+zlib-*
+
+# zziplib package and directory
+zziplib-*
+
+# zziplib package and directory
+ois-*
+ois_*
 
 # CMake build directories
 x32

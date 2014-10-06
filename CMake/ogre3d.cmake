@@ -17,6 +17,4 @@ EXECUTE_PROCESS(COMMAND cmake -E tar xjvf ogre_src_v1-8-1.tar.bz2 WORKING_DIRECT
 MESSAGE(STATUS "Extract Result ${extract_result}")
 ENDIF(NOT IS_DIRECTORY "${CMAKE_SOURCE_DIR}/ogre_src_v1-8-1")
 
-# Disable Ogre3d sample dependency installation
-set(OGRE_INSTALL_DEPENDENCIES false)
 ADD_SUBDIRECTORY("${CMAKE_SOURCE_DIR}/ogre_src_v1-8-1")

@@ -1,4 +1,4 @@
-if(WINDOWS)
+if(WIN32)
 # Download Windows Astyle binary.
 if(NOT EXISTS "${CMAKE_SOURCE_DIR}/AStyle_2.04_windows.zip")
 message(STATUS "Please wait while downloading the Astyle code beautifier...")
@@ -12,10 +12,9 @@ message(STATUS "Done downloading Astyle binary")
 endif(NOT EXISTS "${CMAKE_SOURCE_DIR}/AStyle_2.04_windows.zip")
 
 # Extract Astyle.
-IF(NOT IS_DIRECTORY "${CMAKE_SOURCE_DIR}/AStyle_2.04_windows")
-MESSAGE(STATUS "Extracting Astyle...")
-EXECUTE_PROCESS(COMMAND cmake -E tar xjvf AStyle_2.04_windows.zip WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} ERROR_VARIABLE extract_result)
-MESSAGE(STATUS "Extract Result ${extract_result}")
-ENDIF(NOT IS_DIRECTORY "${CMAKE_SOURCE_DIR}/AStyle_2.04_windows")
-
-endif(WINDOWS)
+if(NOT EXISTS "${CMAKE_SOURCE_DIR}/AStyle.exe")
+message(STATUS "Extracting Astyle...")
+execute_process(COMMAND cmake -E tar xzvf AStyle_2.04_windows.zip WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} ERROR_VARIABLE extract_result)
+execute_process(COMMAND cmake -E copy AStyle/bin/AStyle.exe AStyle.exe WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} ERROR_VARIABLE extract_result)
+endif(NOT EXISTS "${CMAKE_SOURCE_DIR}/AStyle.exe")
+endif(WIN32)
